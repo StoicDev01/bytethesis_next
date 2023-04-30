@@ -1,0 +1,25 @@
+/* App Menu */
+.menu {
+    background-color: rgba(0, 0, 0, 0.8);
+    min-width: 200px;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.menu_wrapper {
+    margin: 10px 10px;
+    text-align: center;
+}
+
+@media (max-width : 1000px) {
+    .menu {
+      display: block;
+    }
+}
+
+.menu_button {
+    width: 24px;
+    height : 24px
+}

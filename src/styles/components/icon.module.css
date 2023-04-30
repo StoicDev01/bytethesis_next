@@ -1,0 +1,25 @@
+.icon>*>* {
+    color: var(--text-color);
+}
+
+.icon_button>*>* {
+    color: var(--text-color);
+}
+
+.icon_button>* {
+    fill: var(--text-color);
+    color: var(--text-color);
+}
+
+.icon {
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+}
+
+.icon_button {
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer
+}

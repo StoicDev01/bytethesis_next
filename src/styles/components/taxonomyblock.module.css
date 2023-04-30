@@ -1,0 +1,31 @@
+.taxonomy-block {
+    height: 160px;
+    width: 230px;
+    background-color: var(--object-color);
+    display: block;
+}
+
+.taxonomy-block-wrapper {
+    padding: 20px 20px 0;
+    overflow: hidden;
+}
+
+.taxonomy-block-tags {
+    margin-bottom: 8px;
+    min-height: 11px;
+}
+
+.taxonomy-block-title {
+    font-size: 1.6rem;
+    line-height: 1.35;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+
+.taxonomy-block-excerpt {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
