@@ -15,7 +15,6 @@ import { Language } from "@app/lib/Language"
 interface Props {
     pages? : { name : string; link : string}[];
     languages? : Language[];
-    memoryTheme : string | null;
 }
 
 
@@ -23,8 +22,6 @@ export default function Header(props : Props) {
     const [theme, setTheme] = useState<string | null>(null);
     const [changeThemeIcon, setChangeThemeIcon] = useState<JSX.Element>()
     const [isMenuActive, setMenuActive] = useState(false);
-
-    console.log(props.memoryTheme)
     
     function getChangeThemeIcon(theme : string | null ){
         const Icon = theme === "light" ? Dark : Light
