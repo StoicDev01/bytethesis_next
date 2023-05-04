@@ -9,4 +9,5 @@ export interface MetaPage {
     summary : string;
     content? : JSX.Element;
     contentHtml ? : string;
+    isPrivate? : boolean;
 }

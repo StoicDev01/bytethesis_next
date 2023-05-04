@@ -1,30 +1,27 @@
 import Article from "@app/components/Article";
-import { MetaPage } from "@app/components/PostBlock";
 
-import ReactMarkdown from 'react-markdown'
+import { GetStaticProps } from "next";
+import { MetaPage } from "@app/lib/MetaPage";
+import { getPostData } from "@app/lib/GetPostData";
 
-const content = <ReactMarkdown> 
-{
-`Bytethesis um site sobre programação e tecnologia. Aqui você encontrará uma variedade de conteúdos incluindo novidades e tutoriais, o objetivo desse blog é compartilhar conhecimento e aprender no caminho.
-
-## Autor
-Email: ryan.costasousa01@gmail.com`
-}
-</ReactMarkdown>
-
-const page : MetaPage = {
-    author : "Ryan",
-    categories : [],
-    date : "2023-04-24",
-    link : "/about",
-    summary : "Bytethesis um site sobre programação e tecnologia. Aqui você encontrará uma variedade de conteúdos incluindo novidades e tutoriais",
-    content : content,
-    title : "About"
+interface Props {
+    page : MetaPage
 }
 
-export default function about(){
+export const getStaticProps : GetStaticProps  = async ( context) => {
+
+    const page = await getPostData("en", "about", true);
+
+    return {
+        props: {
+            page
+        }
+    }
+}
+
+export default function About(props : Props){
 
     return ( 
-        <Article page={page}/>
+        <Article page={props.page}/>
     )
 }

@@ -26,21 +26,24 @@ export default function Article(props : Props){
                             />
                         )}
 
-                        <span className={`${styles.article_meta} bold uppercase`}>
-                            <a className="meta-author not-accentued"> {props.page.author }</a> 
-                            /
-                            <time className="meta-time" dateTime="2022-10-15"> {props.page.date}</time>
-                            /
-                            { props.page.categories && props.page.categories.map( (category) => (
-                                <Link 
-                                    key={category} 
-                                    className="accentued2" 
-                                    href={`/categories/${category}`}
-                                >
-                                    {category}
-                                </Link>
-                            ))}
-                        </span>
+                        { props.page.author && props.page.date && (
+                            <span className={`${styles.article_meta} bold uppercase`}>
+                                <a className="meta-author not-accentued"> {props.page.author }</a> 
+                                /
+                                <time className="meta-time" dateTime="2022-10-15"> {props.page.date}</time>
+                                /
+                                { props.page.categories && props.page.categories.map( (category) => (
+                                    <Link 
+                                        key={category} 
+                                        className="accentued2" 
+                                        href={`/categories/${category}`}
+                                    >
+                                        {category}
+                                    </Link>
+                                ))}
+                            </span>
+                        )}
+                        
 
                         <h1 className={`${styles.article_title}`}>{props.page.title}</h1>
                     </header>

@@ -50,7 +50,10 @@ export async function getAllPosts(language : string, options : QueryOptions = { 
 
             if (isFile(postFile)){
                 const newMetaPage = await getPostData(language, path.basename(postFile, ".md"));
-                MetaPages.push(newMetaPage);
+
+                if (!newMetaPage.isPrivate){
+                    MetaPages.push(newMetaPage);
+                }
             }
         }
     }
