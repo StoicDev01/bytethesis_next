@@ -10,7 +10,7 @@ interface Props {
 
 export async function getStaticPaths() {
 
-  const paths = listAllPosts("en").map( (id) => (
+  const paths = listAllPosts("pt").map( (id) => (
     {params : { id : id}}
   ))
 
@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
     if (context.params){
         if (typeof context.params.id == "string"){
-            pageData = (await getPostData("en",context.params.id, true)) as MetaPage;
+            pageData = (await getPostData("pt",context.params.id, true)) as MetaPage;
         }
     }
 
