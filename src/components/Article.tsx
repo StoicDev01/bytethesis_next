@@ -3,7 +3,6 @@ import Link from "next/link"
 
 import styles from "@app/styles/Article.module.css"
 import { MetaPage } from "@app/lib/MetaPage"
-import { useEffect } from "react"
 
 interface Props {
     page : MetaPage

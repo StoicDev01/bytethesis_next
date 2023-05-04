@@ -1,7 +1,8 @@
-import Postblock, { PageResume} from "../components/PostBlock"
+import { MetaPage } from "@app/lib/MetaPage"
+import Postblock from "../components/PostBlock"
 
 interface Props {
-    posts : PageResume[]
+    posts : MetaPage[]
 }
 
 export default function PostList(props : Props){
