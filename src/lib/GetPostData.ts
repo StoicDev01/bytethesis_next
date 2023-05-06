@@ -27,7 +27,9 @@ export async function getPostData(language : string, id  : string, withContent=f
     let contentHtml;
 
     if (withContent){
-      const md = Markdown();
+      const md = Markdown({
+        html : true
+      });
 
       md.use(prism)
 
