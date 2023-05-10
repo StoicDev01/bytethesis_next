@@ -22,7 +22,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 }
 
 export default function Home(props : Props) {
-  console.log(props.postData);
 
   return (
     <>
