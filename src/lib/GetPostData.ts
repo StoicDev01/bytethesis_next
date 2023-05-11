@@ -8,11 +8,11 @@ import matter from "gray-matter";
 import PostMetadata from "./PostMetadata";
 import { MetaPage } from "./MetaPage";
 
-import {convert} from "html-to-text"
-
 function extractSummary(content : string){
   // extract text
-  const text = convert(content)
+  
+  const clearMarkdownRegex = /(^#+\s.+)|(\[(.*?)\]\((.*?)\))|(`{3}(.*?)\n([\w\s\S*]*)```)|(<.*?>)/gm;
+  const text = content.replaceAll(clearMarkdownRegex, "");
 
   return text.substring(0, 400) + "...";
 }
@@ -24,30 +24,27 @@ export async function getPostData(language : string, id  : string, withContent=f
 
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents);
-  
-    // Use remark to convert markdown into HTML string
-    let contentHtml;
-
-    const md = Markdown({
-      html : true
-    });
-
-    md.use(prism)
-
-    contentHtml = md.render(matterResult.content);
-
     const postMetadata  : PostMetadata = (matterResult.data) as PostMetadata;
     const postLink = `/${ language != "en" ? (language + "/") : ""}posts/${id}`;
-    const summary = extractSummary(contentHtml);
+    const summary = extractSummary(matterResult.content);
 
-  
     const newMetaPage :MetaPage = {
       ...postMetadata,
       summary : summary,
       link : postLink
     }
 
+    // Use remark to convert markdown into HTML string
+    let contentHtml;
+
     if (withContent){
+      const md = Markdown({
+        html : true
+      });
+  
+      md.use(prism)
+  
+      contentHtml = md.render(matterResult.content);
       newMetaPage.contentHtml = contentHtml;
     }
 
