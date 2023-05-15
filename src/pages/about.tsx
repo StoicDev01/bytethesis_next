@@ -4,6 +4,9 @@ import { GetStaticProps } from "next";
 import { MetaPage } from "@app/lib/MetaPage";
 import { getPostData } from "@app/lib/GetPostData";
 
+import Head from "next/head";
+import MetaData from "@app/components/MetaData";
+
 interface Props {
     page : MetaPage
 }
@@ -22,6 +25,9 @@ export const getStaticProps : GetStaticProps  = async ( context) => {
 export default function About(props : Props){
 
     return ( 
-        <Article page={props.page}/>
+        <>
+            <MetaData page={props.page}/>
+            <Article page={props.page}/>
+        </>
     )
 }

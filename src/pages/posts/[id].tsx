@@ -3,6 +3,7 @@ import { getPostData } from '@app/lib/GetPostData';
 import Article from '@app/components/Article';
 import { MetaPage } from '@app/lib/MetaPage';
 import { listAllPosts } from '@app/lib/ListAllPosts';
+import MetaData from '@app/components/MetaData';
 
 interface Props {
   pageData : MetaPage
@@ -43,7 +44,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
 export default function Post(props : Props){
 
     return (
-      
-        <Article  page={props.pageData}/>
+        <>
+          <MetaData page={props.pageData}/>
+          <Article  page={props.pageData}/>
+        </>
     )
 }
