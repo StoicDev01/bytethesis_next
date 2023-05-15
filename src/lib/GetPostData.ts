@@ -10,9 +10,14 @@ import { MetaPage } from "./MetaPage";
 
 function extractSummary(content : string){
   // extract text
+
+  const removeTopicsRegex = /(^#+\s.+)/gm;
+  const removeLinksRegex = /\[(.*?)\]\((?:https?:\/\/)?([\w\d\/\\_.-]+)\)/g;
+  const removeCodeRegex = /(`{3}(.*?)\n([\w\s\S*]*)```)/g;
   
-  const clearMarkdownRegex = /(^#+\s.+)|(\[(.*?)\]\((.*?)\))|(`{3}(.*?)\n([\w\s\S*]*)```)|(<.*?>)/gm;
-  const text = content.replaceAll(clearMarkdownRegex, "");
+  let text = content.replaceAll(removeTopicsRegex, "");
+  text = text.replace(removeLinksRegex, "$1");
+  text = text.replace(removeCodeRegex, "");
 
   return text.substring(0, 400) + "...";
 }
