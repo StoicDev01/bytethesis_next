@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <div>
-      <Header pages={pages} languages={languages}/>
+      <Header pages={pages} languages={languages} languageName={language}/>
       <Component {...pageProps} language={language} languages={languages}/>
     </div>
   )

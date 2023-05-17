@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 
 import Image from "next/image"
 import Link from "next/link"
+import Router, { useRouter } from "next/router"
 
 import {MdOutlineDarkMode as Dark} from "react-icons/md"
 import {RxSun as Light} from "react-icons/rx"
@@ -12,9 +13,34 @@ import Menu from "./Menu"
 import IconButton from "./IconButton"
 import { Language } from "@app/lib/Language"
 
+
 interface Props {
     pages? : { name : string; link : string}[];
     languages? : Language[];
+    languageName : string;
+}
+
+
+function ChangeLangButton(props : {languageName : string}){
+    const router = useRouter();
+
+    return (
+        <IconButton
+            icon={
+                <h3>
+                    {props.languageName === "pt" ? "Pt" : "En"}
+                </h3>
+            }
+
+            onClick={ 
+                () => {
+                    props.languageName === "en" ? 
+                        router.push("/pt", undefined, { shallow: true }) : 
+                        router.push("/", undefined, { shallow : true})
+                }
+            }
+        /> 
+    )
 }
 
 
@@ -22,6 +48,7 @@ export default function Header(props : Props) {
     const [theme, setTheme] = useState<string | null>(null);
     const [changeThemeIcon, setChangeThemeIcon] = useState<JSX.Element>()
     const [isMenuActive, setMenuActive] = useState(false);
+    const [language, setLanguage] = useState<"pt" | "en">();
     
     function getChangeThemeIcon(theme : string | null ){
         const Icon = theme === "light" ? Dark : Light
@@ -99,10 +126,19 @@ export default function Header(props : Props) {
                     </div>
 
                     <div className={styles.header_brand_text}>
-                        <Link  className={styles.header_text} href="/">Bytethesis</Link>
+                        <Link  
+                            className={styles.header_text} 
+                            href={props.languageName === "pt" ? "/pt" : "/"}
+                        >
+                            Bytethesis
+                        </Link>
                     </div>
 
                     <div className={["phone-only", styles.header_buttons].join(" ")}>
+                        <ChangeLangButton
+                            languageName={props.languageName}
+                        />
+
                         <IconButton
                             icon={changeThemeIcon}
                         />
@@ -126,6 +162,10 @@ export default function Header(props : Props) {
 
 
                 <div className={[styles.header_buttons, "desktop-only"].join((" "))}>
+                    <ChangeLangButton
+                            languageName={props.languageName}
+                    />
+
                     <IconButton
                         icon={ changeThemeIcon}
                         onClick={switchTheme}
