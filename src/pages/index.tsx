@@ -23,7 +23,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   let metapage = await getPostData("en", "about");
 
   // generate rss feed
-  generateRssFeed("bytethesis.one", "en", ptPosts, postData);
+  generateRssFeed("bytethesis.one", "en",postData, ptPosts);
   generateSiteMap("https", "bytethesis.one", ptPosts, postData);
   
   metapage.title = "Bytethesis";
