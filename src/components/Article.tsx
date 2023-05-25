@@ -17,7 +17,7 @@ export default function Article(props : Props){
                     <header className={`article-header ${styles.canvas}`}>
                         { props.page.imageLink && (
                             <Image
-                                className={`${styles.article_content} ${styles.article_image}`}
+                                className={styles.article_banner}
                                 src={props.page.imageLink}
                                 alt={"keywrod"}
                                 width={720}

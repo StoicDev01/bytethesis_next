@@ -5,6 +5,11 @@
     display : flex;
 }
 
+.article_banner {
+    width : 100%;
+    height : auto;
+}
+
 .article_content {
     font-size: var(1.7rem,1.8rem);
     letter-spacing: var(--content-letter-spacing,0);
