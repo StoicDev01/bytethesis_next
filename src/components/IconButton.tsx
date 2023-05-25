@@ -16,3 +16,13 @@ export default function Button(props : Props){
         </div>
     )
 }
+
+export function MenuButton(props: Props){
+    return (
+        <div 
+            onClick={ props.onClick}
+        >
+            {props.icon}
+        </div>
+    )
+}

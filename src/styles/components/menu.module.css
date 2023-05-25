@@ -1,15 +1,28 @@
+
+@keyframes menu_move {
+    from  {min-width : 100px};
+    to { min-width: 250px;}
+}
+
+
 /* App Menu */
 .menu {
-    background-color: rgba(0, 0, 0, 0.8);
-    min-width: 200px;
-    min-height: 100%;
+    background-color: var(--menu-color);
+    min-height: 100vh;
     position: absolute;
     top: 0;
     right: 0;
+
+    transition: visibility 0.5s, width 0.5s ease-in-out;
+    overflow: hidden;
 }
 
 .menu_wrapper {
     margin: 10px 10px;
+    overflow: hidden;
+}
+
+.menu_options {
     text-align: center;
 }
 
@@ -20,6 +33,14 @@
 }
 
 .menu_button {
-    width: 24px;
-    height : 24px
+    width: 32px;
+    height : 32px;
+}
+
+.menu_button:hover {
+    cursor: pointer;
+}
+
+.menu_button > * {
+    color: #ffffff;
 }

@@ -1,7 +1,7 @@
 import styles from "../styles/components/menu.module.css"
 import Link from "next/link"
 
-import IconButton from "../components/IconButton"
+import {MenuButton} from "../components/IconButton"
 import {AiOutlineClose} from "react-icons/ai"
 import { Language } from "@app/lib/Language";
 
@@ -16,33 +16,42 @@ export default function Menu (props : Props){
     return (
         <div className={styles.menu}
             style={{
-                display : props.isActive ? "block" : "none"
+                width : props.isActive ? "250px" : "0px",
+                visibility : props.isActive ? "visible" : "hidden"
             }}
         >
-            <IconButton 
-                icon={<AiOutlineClose className={styles.menu_button}/>}
-                onClick={() => (props.onDeactivate && props.onDeactivate()) }
-            />
 
-            <div className={styles.menu_wrapper}>
-                <nav>
-                    <Link href="/">HOME</Link> <br/>
+            <div className={styles.menu_wrapper}
+            >
 
-                    { props.pages && props.pages.map((item) => (
+                <MenuButton 
+                    icon={<AiOutlineClose className={styles.menu_button}/>}
+                    onClick={() => (props.onDeactivate && props.onDeactivate()) }
+                />
+
+                <div className={styles.menu_options}
+
+                >
+                    <nav>
+                        <Link href="/">HOME</Link> <br/>
+
+                        { props.pages && props.pages.map((item) => (
+                            <div key={item.name}>
+                                <a href={`/${item.name}`}>{item.name.toUpperCase()}</a>
+                                <br/>
+                            </div>
+                        ))}
+                    </nav>
+
+                    <hr/>
+                    
+                    {props.languages && props.languages.map( (item) => (
                         <div key={item.name}>
-                            <a href={`/${item.name}`}>{item.name.toUpperCase()}</a>
-                            <br/>
+                            <Link href={`/${item.shortName !== "en" ? item.shortName : ""}`}> {item.name} </Link>
                         </div>
                     ))}
-                </nav>
+                </div>
 
-                <hr/>
-                
-                {props.languages && props.languages.map( (item) => (
-                    <div key={item.name}>
-                        <Link href={`/${item.shortName !== "en" ? item.shortName : ""}`}> {item.name} </Link>
-                    </div>
-                ))}
             </div>
         </div>
     )
