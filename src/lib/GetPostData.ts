@@ -15,7 +15,7 @@ function extractSummary(content : string){
   const removeLinksRegex = /\[(.*?)\]\((?:https?:\/\/)?([\w\d\/\\_.-]+)\)/g;
   const removeCodeRegex = /(`{3}(.*?)\n([\w\s\S*]*)```)/g;
   
-  let text = content.replaceAll(removeTopicsRegex, "");
+  let text = content.trim().replaceAll(removeTopicsRegex, "");
   text = text.replace(removeLinksRegex, "$1");
   text = text.replace(removeCodeRegex, "");
 

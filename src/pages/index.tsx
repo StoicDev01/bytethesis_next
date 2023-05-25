@@ -1,11 +1,13 @@
-import { MetaPage } from '@app/lib/MetaPage';
-import Header from '../components/Header';
 import PostList from '../components/PostList';
+
+import { MetaPage } from '@app/lib/MetaPage';
 import { getAllPosts } from '@app/lib/GetAllPosts';
 import { GetStaticProps } from 'next';
-import Head from 'next/head';
 import { getPostData } from '@app/lib/GetPostData';
+
 import MetaData from '@app/components/MetaData';
+import generateRssFeed from '@app/lib/Rss';
+import generateSiteMap from '@app/lib/Sitemap';
 
 interface Props{
   children : React.ReactNode;
@@ -17,8 +19,13 @@ interface Props{
 export const getStaticProps: GetStaticProps = async (context) => {
   // Add the "await" keyword like this:
   let postData = await getAllPosts("en");
+  let ptPosts = await getAllPosts("pt");
   let metapage = await getPostData("en", "about");
 
+  // generate rss feed
+  generateRssFeed("bytethesis.one", "en", ptPosts, postData);
+  generateSiteMap("https", "bytethesis.one", ptPosts, postData);
+  
   metapage.title = "Bytethesis";
 
   return {
