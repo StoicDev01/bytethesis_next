@@ -13,6 +13,9 @@ export default async function generateRssFeed(host : string, language : string, 
     image_url: `${site_url}/favicon.ico`,
     pubDate: new Date(),
     copyright: `All rights reserved ${new Date().getFullYear()}`,
+    custom_namespaces: {
+        media: "http://search.yahoo.com/mrss/",
+    }
  };
 
  const enFeed = new RSS(feedOptions);
@@ -41,7 +44,23 @@ export default async function generateRssFeed(host : string, language : string, 
         enclosure : {
             url : "https://bytethesis.one" + post.imageLink,
             type : "image/png"
-        }
+        },
+
+        custom_elements : [
+            {
+                "media:content" : [
+                    {
+                        _attr : {
+                            url: "https://bytethesis.one" + post.link,
+                            type: "application/html",
+                            isDefault: "true",
+                            lang: "pt" 
+                        }
+                    }
+                ]
+                
+            }
+        ]
     })
  })
 
