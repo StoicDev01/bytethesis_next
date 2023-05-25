@@ -30,7 +30,22 @@ export default async function generateRssFeed(host : string, language : string, 
         author : post.author,
         enclosure : {
             url : "https://bytethesis.one" + post.imageLink
-        }
+        },
+        custom_elements : [
+            {
+                "media:content" : [
+                    {
+                        _attr : {
+                            url: "https://bytethesis.one" + post.link,
+                            type: "application/html",
+                            isDefault: "true",
+                            lang: "en" 
+                        }
+                    }
+                ]
+                
+            }
+        ]
     })
  })
 
