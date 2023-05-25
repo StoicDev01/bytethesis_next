@@ -117,7 +117,9 @@ export default function Header(props : Props) {
             <div className={["inner", styles.header_inner].join(" ")}>
                 <div className={styles.header_brand}>
                     <div className={styles.header_brand_icon}>
-                        <Link href="/">
+                        <Link 
+                            href={props.languageName === "pt" ? "/pt" : "/"}
+                        >
                             <Image 
                                 alt="brand-image" width="50" height="50" id="brand-icon" 
                                 className="shadow2 round clickable" src="/images/Bytethesis.png"
@@ -141,6 +143,7 @@ export default function Header(props : Props) {
 
                         <IconButton
                             icon={changeThemeIcon}
+                            onClick={switchTheme}
                         />
 
                         <IconButton
@@ -163,7 +166,7 @@ export default function Header(props : Props) {
 
                 <div className={[styles.header_buttons, "desktop-only"].join((" "))}>
                     <ChangeLangButton
-                            languageName={props.languageName}
+                        languageName={props.languageName}
                     />
 
                     <IconButton
