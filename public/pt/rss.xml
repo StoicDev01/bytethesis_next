@@ -9,9 +9,9 @@
             <link>bytethesis.one</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 25 May 2023 18:58:37 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 25 May 2023 19:43:13 GMT</lastBuildDate>
         <atom:link href="bytethesis.one/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Thu, 25 May 2023 18:58:37 GMT</pubDate>
+        <pubDate>Thu, 25 May 2023 19:43:13 GMT</pubDate>
         <copyright><![CDATA[All rights reserved 2023]]></copyright>
         <item>
             <title><![CDATA[My First post (EN)]]></title>
@@ -22,10 +22,11 @@
 
 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, s...]]></description>
-            <link>/posts/example-post</link>
-            <guid isPermaLink="true">/posts/example-post</guid>
+            <link>https://bytethesis.one/posts/example-post</link>
+            <guid isPermaLink="true">https://bytethesis.one/posts/example-post</guid>
             <dc:creator><![CDATA[Izkeas]]></dc:creator>
             <pubDate>Wed, 05 Apr 2023 00:00:00 GMT</pubDate>
+            <enclosure url="https://bytethesis.one/pt/example-post/banner.png" length="0" type="image/png"/>
         </item>
     </channel>
 </rss>

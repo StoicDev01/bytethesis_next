@@ -23,8 +23,11 @@ export default async function generateRssFeed(host : string, language : string, 
         date : post.date,
         description : post.summary,
         title : post.title,
-        url : post.link,
-        author : post.author
+        url : "https://bytethesis.one" + post.link,
+        author : post.author,
+        enclosure : {
+            url : "https://bytethesis.one" + post.imageLink
+        }
     })
  })
 
@@ -33,10 +36,15 @@ export default async function generateRssFeed(host : string, language : string, 
         date : post.date,
         description : post.summary,
         title : post.title,
-        url : post.link,
-        author : post.author
+        url : "https://bytethesis.one" + post.link,
+        author : post.author,
+        enclosure : {
+            url : "https://bytethesis.one" + post.imageLink,
+            type : "image/png"
+        }
     })
  })
+
 
  fs.writeFileSync(`./public/rss.xml`, enFeed.xml({ indent: true }));
  fs.writeFileSync(`./public/pt/rss.xml`, ptFeed.xml({indent : true}));
