@@ -28,9 +28,6 @@ export default async function generateRssFeed(host : string, language : string, 
         title : post.title,
         url : "https://bytethesis.one" + post.link,
         author : post.author,
-        enclosure : {
-            url : "https://bytethesis.one" + post.imageLink
-        },
         custom_elements : [
             {
                 "media:content" : [
@@ -44,6 +41,19 @@ export default async function generateRssFeed(host : string, language : string, 
                     }
                 ]
                 
+            },
+
+            {
+                "media:content" : [
+                    {
+                        _attr : {
+                            url : "https://bytethesis.one" + post.imageLink,
+                            type : "image/png",
+                            width : 2240,
+                            height : 1260
+                        }
+                    }
+                ]
             }
         ]
     })
@@ -56,11 +66,6 @@ export default async function generateRssFeed(host : string, language : string, 
         title : post.title,
         url : "https://bytethesis.one" + post.link,
         author : post.author,
-        enclosure : {
-            url : "https://bytethesis.one" + post.imageLink,
-            type : "image/png"
-        },
-
         custom_elements : [
             {
                 "media:content" : [
@@ -72,8 +77,20 @@ export default async function generateRssFeed(host : string, language : string, 
                             lang: "pt" 
                         }
                     }
+                ]  
+            },
+
+            {
+                "media:content" : [
+                    {
+                        _attr : {
+                            url : "https://bytethesis.one" + post.imageLink,
+                            type : "image/png",
+                            width : 2240,
+                            height : 1260
+                        }
+                    }
                 ]
-                
             }
         ]
     })
