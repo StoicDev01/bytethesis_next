@@ -9,64 +9,10 @@
             <link>bytethesis.one</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 30 May 2023 18:00:57 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 30 May 2023 18:32:29 GMT</lastBuildDate>
         <atom:link href="bytethesis.one/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Tue, 30 May 2023 18:00:57 GMT</pubDate>
+        <pubDate>Tue, 30 May 2023 18:32:29 GMT</pubDate>
         <copyright><![CDATA[All rights reserved 2023]]></copyright>
-        <item>
-            <title><![CDATA[My First post (EN)]]></title>
-            <description><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. test link 
-
-
-
-
-
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, s...]]></description>
-            <link>https://bytethesis.one/posts/example-post copy 2</link>
-            <guid isPermaLink="true">https://bytethesis.one/posts/example-post copy 2</guid>
-            <dc:creator><![CDATA[Izkeas]]></dc:creator>
-            <pubDate>Wed, 05 Apr 2023 00:00:00 GMT</pubDate>
-            <media:content url="https://bytethesis.one/posts/example-post copy 2" type="application/html" isDefault="true" lang="en">
-            </media:content>
-            <media:content url="https://bytethesis.one/pt/example-post/banner.png" type="image/png" width="2240" height="1260">
-            </media:content>
-        </item>
-        <item>
-            <title><![CDATA[My First post (EN)]]></title>
-            <description><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. test link 
-
-
-
-
-
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, s...]]></description>
-            <link>https://bytethesis.one/posts/example-post copy 3</link>
-            <guid isPermaLink="true">https://bytethesis.one/posts/example-post copy 3</guid>
-            <dc:creator><![CDATA[Izkeas]]></dc:creator>
-            <pubDate>Wed, 05 Apr 2023 00:00:00 GMT</pubDate>
-            <media:content url="https://bytethesis.one/posts/example-post copy 3" type="application/html" isDefault="true" lang="en">
-            </media:content>
-            <media:content url="https://bytethesis.one/pt/example-post/banner.png" type="image/png" width="2240" height="1260">
-            </media:content>
-        </item>
-        <item>
-            <title><![CDATA[My First post (EN)]]></title>
-            <description><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. test link 
-
-
-
-
-
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, s...]]></description>
-            <link>https://bytethesis.one/posts/example-post copy</link>
-            <guid isPermaLink="true">https://bytethesis.one/posts/example-post copy</guid>
-            <dc:creator><![CDATA[Izkeas]]></dc:creator>
-            <pubDate>Wed, 05 Apr 2023 00:00:00 GMT</pubDate>
-            <media:content url="https://bytethesis.one/posts/example-post copy" type="application/html" isDefault="true" lang="en">
-            </media:content>
-            <media:content url="https://bytethesis.oneundefined" type="image/png" width="2240" height="1260">
-            </media:content>
-        </item>
         <item>
             <title><![CDATA[My First post (EN)]]></title>
             <description><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. test link 

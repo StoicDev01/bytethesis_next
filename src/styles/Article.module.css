@@ -38,17 +38,22 @@
 
 .canvas > h1 {
     padding-top : 20px;
-    padding-bottom : 20px;
+    padding-bottom : 0px;
 }
 
 .canvas > h2, .canvas > h3, .canvas > h4, .canvas > h5{
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding-top: 24px;
+  padding-bottom: 0px;
+  margin: 0;
 }
 
 .canvas > p {
-    margin: 0;
-    padding-top: 0px;
-    padding-bottom: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
     font-size: 18px;
+    margin: 0;
+}
+
+.canvas > pre {
+    margin-top: 18px;
 }
