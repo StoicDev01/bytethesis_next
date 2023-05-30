@@ -25,7 +25,7 @@
   --menu-color: #0a0e11e0;
 
   --text-color: black;
-  --text-color-2: black;
+  --text-color-2: rgb(39, 39, 39);
 
   --accent-color:#3fa39e;
   --accent-color-2: #3fa365;
@@ -135,12 +135,6 @@ h1 {
 
 pre {
   background-color: var(--code-block-color) !important;
-}
-
-p,
-video {
-  margin-top: 0px;
-  margin-bottom: 18px;
 }
 
 

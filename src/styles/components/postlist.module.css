@@ -1,0 +1,26 @@
+.postlist {
+    display : grid;
+    grid-row-gap: 40px;
+    grid-column-gap: 40px;
+
+    margin: auto;
+}
+
+
+@media only screen and (min-width: 0px){
+    .postlist {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (min-width: 800px){
+    .postlist {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .postlist {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

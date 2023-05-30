@@ -21,14 +21,19 @@ export default function PostBlock(props : Props){
 
                 { props.post.imageLink && (
                     <div className={styles.post_block_image_wrapper}>
-                        <Link href={props.post.link}>
-                                <Image 
-                                    className={styles.post_block_image} 
-                                    src={props.post.imageLink}
-                                    alt={props.post.keyword || ""}
-                                    width={558}
-                                    height={314}
-                                >
+                        <Link href={props.post.link}
+                        
+                            style={{
+                                display : "block"
+                            }}
+                        >
+                            <Image 
+                                className={styles.post_block_image} 
+                                src={props.post.imageLink}
+                                alt={props.post.keyword || ""}
+                                width={558}
+                                height={314}
+                            >
 
                             </Image>
                         </Link>

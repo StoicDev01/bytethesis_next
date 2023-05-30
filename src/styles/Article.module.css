@@ -33,20 +33,22 @@
 .article_content > img {
     width: 100%;
     height : auto;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .canvas > h1 {
-    margin-top : 20px;
-    margin-bottom : 20px;
+    padding-top : 20px;
+    padding-bottom : 20px;
 }
 
 .canvas > h2, .canvas > h3, .canvas > h4, .canvas > h5{
-  margin-top: 18px;
-  margin-bottom: 18px;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 
 .canvas > p {
-    margin-top: 0px;
-    margin-bottom: 18px;
+    margin: 0;
+    padding-top: 0px;
+    padding-bottom: 2em;
+    font-size: 18px;
 }
