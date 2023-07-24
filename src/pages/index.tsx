@@ -17,7 +17,6 @@ interface Props{
 
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  // Add the "await" keyword like this:
   let postData = await getAllPosts("en");
   let ptPosts = await getAllPosts("pt");
   let metapage = await getPostData("en", "about");

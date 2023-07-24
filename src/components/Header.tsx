@@ -13,6 +13,8 @@ import Menu from "./Menu"
 import IconButton from "./IconButton"
 import { Language } from "@app/lib/Language"
 
+import { useSearchParams } from 'next/navigation'
+import { isConciseBody } from "typescript"
 
 interface Props {
     pages? : { name : string; link : string}[];
@@ -49,10 +51,17 @@ export default function Header(props : Props) {
     const [changeThemeIcon, setChangeThemeIcon] = useState<JSX.Element>()
     const [isMenuActive, setMenuActive] = useState(false);
     const [language, setLanguage] = useState<"pt" | "en">();
+    const searchParams = useSearchParams();
+
     
     function getChangeThemeIcon(theme : string | null ){
         const Icon = theme === "light" ? Dark : Light
         return <Icon className={styles.header_button}/>
+    }
+
+    function getThemeFromParameters(){
+        const theme = searchParams.get("theme");
+        return theme;
     }
 
     function getThemeFromDocument(){
@@ -82,10 +91,10 @@ export default function Header(props : Props) {
 
     // On start
     useEffect( () => {
-        let startTheme = getThemeFromMemory() || getThemeFromDocument();
+        let startTheme = getThemeFromParameters() || getThemeFromMemory() || getThemeFromDocument();
 
         setTheme(startTheme);
-    }, [])
+    }, [searchParams])
 
     // When theme changes
     useEffect( () => {
